@@ -1,10 +1,12 @@
 from playerObject import PlayerObject
 from borderObject import BorderObject
 from appleObject import AppleObject
+from scoreObject import ScoreObject
 import messages
 
 class GameController:
     def eatHandle(self):
+        self.gameObjects["score"].addPoint() 
         self.gameObjects["player"].sendMessage(messages.ADD_NODE)
         self.gameObjects["apple"].moveApple()
 
@@ -16,6 +18,7 @@ class GameController:
             obj.update()
 
     def newGame(self):
+        self.gameObjects["score"] = ScoreObject(self, 0, screen)
         self.gameObjects["player"] = PlayerObject(self, '\u2591', self.screen)
         self.gameObjects["apple"].moveApple()
         self.gameObjects["player"].sendMessage(messages.MOVE_RIGHT)
@@ -32,6 +35,7 @@ class GameController:
             messages.APPLE_EATEN: self.eatHandle,
             messages.DEADLY_COLLISION: self.dieHandle
         }
+        self.gameObjects["score"] = ScoreObject(self, 0, screen)
         self.gameObjects["player"] = PlayerObject(self, '\u2591', screen)
         self.gameObjects["apple"] = AppleObject(self, "@", screen)
         self.gameObjects["border"] = BorderObject(self, '\u2591', screen)
