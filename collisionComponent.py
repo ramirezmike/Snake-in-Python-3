@@ -21,6 +21,6 @@ class CollisionComponent(Component):
         self.collisionHandler = {
             "@": self.eatHandle,
             "X": self.dieHandle,
-            u"\u2591": self.dieHandle
+            "\\u2591": self.dieHandle
         }
 

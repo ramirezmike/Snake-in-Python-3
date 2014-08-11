@@ -12,11 +12,11 @@ class GameController:
         self.newGame()
 
     def update(self):
-        for key, obj in self.gameObjects.iteritems():
+        for key, obj in list(self.gameObjects.items()):
             obj.update()
 
     def newGame(self):
-        self.gameObjects["player"] = PlayerObject(self, u"\u2591", self.screen)
+        self.gameObjects["player"] = PlayerObject(self, "X", self.screen)
         self.gameObjects["apple"].moveApple()
         self.gameObjects["player"].sendMessage(messages.MOVE_RIGHT)
 
@@ -32,7 +32,7 @@ class GameController:
             messages.APPLE_EATEN: self.eatHandle,
             messages.DEADLY_COLLISION: self.dieHandle
         }
-        self.gameObjects["player"] = PlayerObject(self, u"\u2591", screen)
+        self.gameObjects["player"] = PlayerObject(self, '\u2588', screen)
         self.gameObjects["apple"] = AppleObject(self, "@", screen)
-        self.gameObjects["border"] = BorderObject(self, u"\u2591", screen)
+        self.gameObjects["border"] = BorderObject(self, '\u2588', screen)
         self.gameObjects["player"].sendMessage(messages.MOVE_RIGHT)

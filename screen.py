@@ -4,14 +4,14 @@ class Screen:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.screenContainer = [[" " for i in xrange(height)] for j in xrange(width)]
-        self.grid = [[" " for i in xrange(height)] for j in xrange(width)]
+        self.screenContainer = [[" " for i in range(height)] for j in range(width)]
+        self.grid = [[" " for i in range(height)] for j in range(width)]
 
     def clear(self):
         #os.system("clear")
         os.system("cls")
         self.grid = self.screenContainer
-        self.screenContainer = [[" " for i in xrange(self.height)] for j in xrange(self.width)]
+        self.screenContainer = [[" " for i in range(self.height)] for j in range(self.width)]
 
     def render(self):
         self._printScreen()
@@ -21,7 +21,7 @@ class Screen:
             line = ""
             for x in range(0,self.width):
                 line = line + self.screenContainer[x][y]
-            print line
+            print(line)
 
     def getFromScreen(self, x, y):
         return self.screenContainer[x][y]

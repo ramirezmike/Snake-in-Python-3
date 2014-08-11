@@ -17,4 +17,4 @@ class Framerate:
             self.frameCount = 0
 
     def _print(self):
-        print self.avgFPS
+        print((self.avgFPS))

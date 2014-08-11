@@ -6,11 +6,11 @@ class ControlComponent(Component):
     def __init__(self):
         Component.__init__(self)
         self.controls = {
-            'M': messages.MOVE_RIGHT,
-            'K': messages.MOVE_LEFT,
-            'H': messages.MOVE_UP,
-            'P': messages.MOVE_DOWN,
-            'x': messages.ADD_NODE
+            b'M': messages.MOVE_RIGHT,
+            b'K': messages.MOVE_LEFT,
+            b'H': messages.MOVE_UP,
+            b'P': messages.MOVE_DOWN,
+            b'x': messages.ADD_NODE
         }
 
     def update(self, parent):
