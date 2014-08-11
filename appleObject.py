@@ -7,6 +7,6 @@ class AppleObject(Object):
         self.moveApple()
 
     def moveApple(self):
-        self.x = randrange(1, self.screen.width)
-        self.y = randrange(1, self.screen.height)
+        self.x = randrange(1, self.screen.width - 1)
+        self.y = randrange(1, self.screen.height - 1)
 
