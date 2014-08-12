@@ -1,6 +1,7 @@
 from object import Object
 from controlComponent import ControlComponent
 from moveComponent import MoveComponent
+from aiControlComponent import AIControlComponent
 from collisionComponent import CollisionComponent
 from tailComponent import TailComponent
 import messages
@@ -16,8 +17,8 @@ class PlayerObject(Object):
         self.moveDown = False
         self.moveLeft = False
         self.moveRight = False
-        self.controlComponent = ControlComponent()
-        self.moveComponent = MoveComponent(self, screen)
+        self.controlComponent = AIControlComponent(self, screen)
+        self.moveComponent = MoveComponent(self)
         self.collisionComponent = CollisionComponent(self)
         self.tailComponent = TailComponent()
         self.components.append(self.controlComponent)

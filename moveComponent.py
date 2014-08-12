@@ -34,10 +34,9 @@ class MoveComponent(Component):
             self.moveY = 0
             self.moveX = 1
 
-    def __init__(self, parent, screen):
+    def __init__(self, parent):
         Component.__init__(self)
         self.parent = parent
-        self.screen = screen
         self.moveDelay = parent.speed
         self.moveX = 0
         self.moveY = 0

@@ -18,7 +18,7 @@ class GameController:
             obj.update()
 
     def newGame(self):
-        self.gameObjects["score"] = ScoreObject(self, 0, screen)
+        self.gameObjects["score"] = ScoreObject(self, 0, self.screen)
         self.gameObjects["player"] = PlayerObject(self, '\u2591', self.screen)
         self.gameObjects["apple"].moveApple()
         self.gameObjects["player"].sendMessage(messages.MOVE_RIGHT)
