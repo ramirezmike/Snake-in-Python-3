@@ -2,7 +2,7 @@ from framerate import Framerate
 from screen import Screen
 from gameController import GameController
 
-width = 20#60
+width = 40#60
 height = 20#35
 
 screen = Screen(width,height)

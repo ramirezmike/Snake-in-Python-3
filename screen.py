@@ -24,7 +24,7 @@ class Screen:
             print(line)
 
     def getFromScreen(self, x, y):
-        return self.screenContainer[x][y]
+        return self.grid[x][y]
 
     def addToScreen(self, x, y, content):
         self.screenContainer[x][y] = content
